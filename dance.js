@@ -68,6 +68,8 @@ function preload() {
 
     imgra = loadImage("ra.png");
     imgsi = loadImage("si.png");
+    imgbu = loadImage("bu.png");
+    imgya = loadImage("ya.png");
 }
 
 function setup () {
@@ -105,19 +107,19 @@ function draw() {
     if(y < height*2/3){
         if(objDice===1){
             image(imgneonb, x, y, 13*scal, 36*scal, tr);
-        } else if (objDice===2 || objDice === 9) {
+        } else if (objDice===2) {
             image(imgneonp, x, y, 10*scal, 36*scal, tr);
         } else if (objDice<30 && objDice>=25) {
             image(imgbuild_l, x, y, 9*scal, 41*scal, tr);
         } else if (objDice <20 && objDice >= 15) {
             image(imgbuild_s, x, y, 14*scal, 28*scal);
-        } else if (objDice === 5) {
+        } else if (objDice === 3) {
             image(imgneonp2, x, y, 10*scal, 36*scal, tr);
-        } else if (objDice === 6) {
+        } else if (objDice === 4) {
             image(imgneonp3, x, y, 10*scal, 36*scal, tr);
-        } else if (objDice === 7) {
+        } else if (objDice === 5) {
             //image(imgneony, x, y, 10*scal, 36*scal, tr);
-        } else if (objDice === 8) {
+        } else if (objDice === 6) {
             image(imgneonp4, x, y, 10*scal, 36*scal, tr);
         }
     } else {
@@ -135,6 +137,17 @@ function draw() {
             image(imgfishred, x, y, 13*scal, 17*scal);
         } else if (objDice === 7){
             image(imgfishbk, x, y, 8*scal, 14*scal);
+        }
+    }
+
+    // 上のほうに一瞬文字を表示する
+    if (x > 77*scal && x < (actualSize-77)*scal && y < 90*scal) {
+        if(objDice === 9) {
+            image(imgya, x, y, 14*scal, 14*scal);
+        } else if (objDice === 10){
+            image(imgsi, x, y, 13*scal, 14*scal);
+        } else if (objDice === 8){
+            image(imgbu, x, y, 16*scal, 15*scal);
         }
     }
 
